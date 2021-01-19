@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class ValidationUtilTest {
 
     @Test
-    public void luhnValidationTestWithValidNumbers() {
+    public void luhnValidationWithValidNumbersTest() {
         assertTrue(ValidationUtil.luhnValidation("4111111111111111"));
         assertTrue(ValidationUtil.luhnValidation("4012888888881881"));
         assertTrue(ValidationUtil.luhnValidation("378282246310005"));
@@ -17,7 +17,7 @@ public class ValidationUtilTest {
     }
 
     @Test
-    public void luhnValidationTestWithInvalidNumbers() {
+    public void luhnValidationWithInvalidNumbersTest() {
         assertFalse(ValidationUtil.luhnValidation("4111111111111"));
         assertFalse(ValidationUtil.luhnValidation("378282246310002"));
         assertFalse(ValidationUtil.luhnValidation("6011111111111118"));
@@ -25,17 +25,17 @@ public class ValidationUtilTest {
     }
 
     @Test
-    public void luhnValidationTestWithNull() {
+    public void luhnValidationWithNullTest() {
         assertFalse(ValidationUtil.luhnValidation(null));
     }
 
     @Test
-    public void luhnValidationTestWithEmpty() {
+    public void luhnValidationWithEmptyNumberTest() {
         assertFalse(ValidationUtil.luhnValidation(""));
     }
 
     @Test
-    public void luhnValidationTestWithDodgyNumber() {
+    public void luhnValidationWithDodgyNumberTest() {
         assertFalse(ValidationUtil.luhnValidation("!@#$$^*%^&*()"));
     }
 }

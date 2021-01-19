@@ -17,7 +17,7 @@ public class CreditCardValidationServiceTest {
     private CreditCardValidationService creditCardValidationService;
 
     @Test
-    public void processValidCreditCardNumbersTest() {
+    public void processCreditCardNumberValidationWithValidNumbersTest() {
 
        assertEquals("VISA: 4111111111111111 (valid)",
                 creditCardValidationService.processCreditCardNumberValidation("4111111111111111"));
@@ -36,7 +36,7 @@ public class CreditCardValidationServiceTest {
    }
 
     @Test
-    public void processInvalidCreditCardNumbersTest() {
+    public void processCreditCardNumberValidationWithInvalidNumbersTest() {
 
         assertEquals("VISA: 4111111111111 (invalid)",
                 creditCardValidationService.processCreditCardNumberValidation("4111111111111"));
@@ -55,14 +55,14 @@ public class CreditCardValidationServiceTest {
     }
 
     @Test
-    public void processNullCreditCardNumberTest() {
+    public void processCreditCardNumberValidationWithNullNumberTest() {
         assertEquals("Unknown: null (invalid)",
                 creditCardValidationService.processCreditCardNumberValidation(null));
 
     }
 
     @Test
-    public void processEmptyCreditCardNumberTest() {
+    public void processCreditCardNumberValidationWithEmptyNumberTest() {
         assertEquals("Unknown:  (invalid)",
                 creditCardValidationService.processCreditCardNumberValidation(""));
 
