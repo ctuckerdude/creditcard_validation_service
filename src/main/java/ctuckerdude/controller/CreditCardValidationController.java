@@ -1,7 +1,6 @@
 package ctuckerdude.controller;
 
 import ctuckerdude.service.CreditCardValidationService;
-import io.swagger.annotations.Api;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
 @RestController
-@Api(tags = {"creditcardvalidation"})
 @RequestMapping("/api/v1/creditcard/validation")
 public class CreditCardValidationController {
 
@@ -23,7 +21,7 @@ public class CreditCardValidationController {
     }
 
     @GetMapping(path = "/{ccNumber}", produces = TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> validateCreditCardNumber(@PathVariable("ccNumber") String ccNumber) {
+    public ResponseEntity<String> processCreditCardNumberValidation(@PathVariable("ccNumber") String ccNumber) {
         return new ResponseEntity<>(creditCardValidationService.processCreditCardNumberValidation(ccNumber),
                 HttpStatus.OK);
     }
