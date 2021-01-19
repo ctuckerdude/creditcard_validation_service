@@ -23,19 +23,17 @@ Configuration
 
 An application properties file, application.properties contains the configuration required to start the service.
 There is only one parameter, server.port, which defines the port on which the server will start. The application.properties
-file must exist in the same directory as the credit_card_validation_service-xx_xx_xx.jar file, otherwise the service will
+file must exist in the same directory as the credit_card_validation_service-x.x.x.jar file, otherwise the service will
 start on the default port of 8300.
 
 Starting the Service
 --------------------
 
 The service is started on command line:
-java -jar credit_card_validation_service_xx_xx_xx.jar
+java -jar credit_card_validation_service-x.x.x.jar
 
 Once started you can invoke the endpoint to validate a credit card number:
-http://localhost:<port>/api/<api_version>/creditcard/validation/<creditcardnumber>,
-
-Where api_version is the version of the api and depends on the release number, see release notes
+http://localhost:<port>/api/v1/creditcard/validation/<creditcardnumber>,
 
 e.g.
 http://localhost:8300/api/v1/creditcard/validation/5105105105105100
